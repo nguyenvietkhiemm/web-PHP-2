@@ -52,8 +52,15 @@
                         </thead>
                         <tbody>
                             <?php
+
+                            $bills = [];
                             if (mysqli_num_rows($bills_data) > 0) {
                                 while ($row = mysqli_fetch_assoc($bills_data)) {
+                                    $bills[] = $row;
+                                }
+                                $bills = array_reverse($bills);
+
+                                foreach ($bills as $row) {
                                     echo "<tr>
                             <td>{$row['id']}</td>
                             <td>{$row['user_id']}</td>

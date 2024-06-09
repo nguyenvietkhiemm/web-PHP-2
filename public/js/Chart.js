@@ -16124,6 +16124,7 @@ core_controller.PluginBase = core_controller.Element.extend({});
  */
 core_controller.canvasHelpers = core_controller.helpers.canvas;
 
+
 /**
  * Provided for backward compatibility, use Chart.layouts instead.
  * @namespace Chart.layoutService

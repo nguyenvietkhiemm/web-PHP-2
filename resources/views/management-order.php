@@ -60,8 +60,14 @@
                         </thead>
                         <tbody>
                             <?php
+                            $orders = [];
                             if (mysqli_num_rows($orders_data) > 0) {
                                 while ($row = mysqli_fetch_assoc($orders_data)) {
+                                    $orders[] = $row;
+                                }
+                                $orders = array_reverse($orders);
+
+                                foreach ($orders as $row) {
                                     echo "<tr>
                             <td>{$row['id']}</td>
                             <td>{$row['user_id']}</td>
@@ -83,10 +89,6 @@
                             ?>
                         </tbody>
                     </table>
-
-
-
-
                 </div>
             </div>
 
